@@ -7,6 +7,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EstudiantesModule } from './estudiantes/estudiantes.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EstudiantesModule } from './estudiantes/estudiantes.module';
     CommonModule,
     AppRoutingModule,
     FormsModule,
+    LoginModule,
     EstudiantesModule,
     NgChartsModule
   ],

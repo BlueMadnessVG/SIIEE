@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="main">
+
+    <div class="info">
+        
+    </div>
+
+    <div class="login">
+
+        <h2> Login </h2>
+
+        <div class="icons">
+            <button class="btn" [ngClass]="{selected: activeClass}" (click)="onClick()">
+                <i class="fa-solid fa-chalkboard-user fa-lg"></i>
+                <p>Profesor</p>
+            </button>
+            <button class="btn" [ngClass]="{selected: !activeClass}" (click)="onClick()">
+                <i class="fa-solid fa-user fa-lg"></i>
+                <p>Estudiante</p>
+            </button>
+        </div>
+
+        <div class="inputs">
+            <p> Usuario </p>
+            <input type="text" name="" id="user">
+        </div>
+        
+        <div class="inputs pass">
+            <p> Contraseña </p>
+            <input type="password" name="" id="pass">
+        </div>
+
+        <button class="login_btn">
+            LOGIN
+        </button>
+    </div>
+</div>
