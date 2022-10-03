@@ -1,0 +1,56 @@
+<div class="main">
+
+    <div class="encuestas">
+        <div class="title">
+            <p>Encuentas asignadas por el profesor</p>
+        </div>
+
+        <div class="encuesta" *ngFor="let Lista of Listas" (click) = "OnClick(Lista.description)">
+            <p class="sub_title"> {{Lista.title}} </p>
+            <div class="content">
+                <p class="text"> Profesor:  </p>
+                <p class="text"> {{Lista.P_name}} </p>
+            </div>
+            <div class="content">
+                <p class="text"> Estado:  </p>
+                <p class="text" style="color: #7BFF81;" *ngIf="Lista.status"> Finalizada </p>
+                <p class="text" style="color: #FF7373;" *ngIf="!Lista.status"> No Finalizada </p>
+            </div>
+
+            <div class="button">
+                <button class="b_encuesta"> Realizar nueva mente </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="text">Numero de encuestas puede variar dependiendo del profesor/s asignados al alumno</p>
+        </div>
+    </div>
+
+    <div class="Res">
+
+        <div class="Description">
+            <div class="title">
+                <p>Descripcion de la encuesta </p>
+            </div>
+            <div class="des_info">
+                <p class="text"> {{ Description }} </p>
+            </div>
+        </div>
+
+        <div class="statistics">
+            <div class="title">
+                <p>Estadisticas de la encuesta</p>
+            </div>
+            <div class="info_statistics">
+                <canvas baseChart
+                    [data]="radarChartData"
+                    [options]="radarChartOptions"
+                    [type]="radarChartType">
+                </canvas>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
