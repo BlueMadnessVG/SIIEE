@@ -1,0 +1,40 @@
+.main{
+    display: grid;
+    grid-template-columns: 40% 1fr;
+}
+
+.table_flex {
+
+    margin: 15px 2% 0 0;
+
+}
+
+.text {
+
+    background-color: #1E2440;
+    color: #ffffff;
+
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 1rem 1rem 0 0;
+    margin-bottom: 0.2rem;
+
+}
+
+.statistics{
+    padding: 1vh;
+    background-color: #1E2440;
+    margin: 20px 5%;
+    border-radius: 1rem;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.info_statistics{
+    background-color: #ffffff;
+    border: 1px solid #6074CC;
+    padding: 1rem;
+    margin: 10px 3%;
+    border-radius: 1rem;
+    font-weight: 500;
+}
