@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   activeClass: boolean;
+  login_form: FormGroup = new FormGroup({});
+  isCheck: any;
 
-  constructor() { 
+  constructor( private fb: FormBuilder ) { 
     this.activeClass = true;
   }
 
@@ -18,6 +21,16 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.login_form = this.fb.group( {
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
+    } )
+
+  }
+
+  sendLogin(): void {
+    this.isCheck = { user: 1 }
   }
 
 }
