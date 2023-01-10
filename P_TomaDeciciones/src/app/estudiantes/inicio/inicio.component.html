@@ -5,20 +5,21 @@
             <p>Encuentas asignadas por el profesor</p>
         </div>
 
-        <div class="encuesta" *ngFor="let Lista of Listas" (click) = "OnClick(Lista.description)">
-            <p class="sub_title"> {{Lista.title}} </p>
+        <div class="encuesta" *ngFor="let Lista of Listas" (click) = "OnClick(Lista.descripcion)">
+            <p class="sub_title"> {{Lista.nombre}} </p>
             <div class="content">
                 <p class="text"> Profesor:  </p>
-                <p class="text"> {{Lista.P_name}} </p>
+                <p class="text"> Fransisco Figueroa </p>
             </div>
-            <div class="content">
+            <div class="content" >
                 <p class="text"> Estado:  </p>
-                <p class="text" style="color: #7BFF81;" *ngIf="Lista.status"> Finalizada </p>
-                <p class="text" style="color: #FF7373;" *ngIf="!Lista.status"> No Finalizada </p>
+                <p class="text" style="color: #7BFF81;" *ngIf="checkStatus( Lista.id_cuestionario )"> Finalizada </p>
+                <p class="text" style="color: #FF7373;" *ngIf="!checkStatus( Lista.id_cuestionario )"> No Finalizada </p>
             </div>
 
-            <div class="button">
-                <button class="b_encuesta"> Realizar nueva mente </button>
+            <div class="button" (click)="realizarEncuesta( Lista.id_cuestionario )">
+                <button class="b_encuesta" *ngIf="checkStatus( Lista.id_cuestionario )"> Realizar nueva mente </button>
+                <button class="b_encuesta" *ngIf="!checkStatus( Lista.id_cuestionario )"> Comensar encuesta </button>
             </div>
         </div>
 
@@ -43,11 +44,7 @@
                 <p>Estadisticas de la encuesta</p>
             </div>
             <div class="info_statistics">
-                <canvas baseChart
-                    [data]="radarChartData"
-                    [options]="radarChartOptions"
-                    [type]="radarChartType">
-                </canvas>
+                <canvas id="MyChart" > {{ chart }} </canvas>
             </div>
 
         </div>

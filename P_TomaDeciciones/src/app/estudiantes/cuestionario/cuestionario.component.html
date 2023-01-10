@@ -1,21 +1,21 @@
-<div  *ngFor = "let pregunta of Cuestionario" class="container themed-container">
+<div  *ngFor = "let pregunta of Cuestionario; let i = index" class="container themed-container">
 
-    <h4> {{ pregunta.pregunta }} </h4>
+    <h4> {{ pregunta.num_pregunta }} .-  {{ pregunta.pregunta }} </h4>
 
     <div>
         
         <label class="respuestas">
 
-            <input type="radio" name="{{ pregunta.id }}" id="{{ pregunta.id }}-1" class="radio_input" checked>
+            <input type="radio" name="{{ pregunta.num_pregunta }}" id="{{ pregunta.num_pregunta }}-A" class="radio_input" checked>
             <div class="radio_radio"></div>
-            {{pregunta.r1}} 
+            {{pregunta.respuesta_1}} 
 
         </label>
         <label class="respuestas"> 
 
-            <input type="radio" name="{{ pregunta.id }}" id="{{ pregunta.id }}-2" class="radio_input">
+            <input type="radio" name="{{ pregunta.num_pregunta }}" id="{{ pregunta.num_pregunta }}-B" class="radio_input">
             <div class="radio_radio"></div>
-            {{pregunta.r2}} 
+            {{pregunta.respuesta_2}} 
 
         </label>
 
@@ -25,6 +25,6 @@
 
 <div class="container boton">
 
-    <button type="button" class="btn btn-primary"> Registrar respuestas </button>
+    <button type="button" class="btn btn-primary" (click)="registrarRespuestas()"> Registrar respuestas </button>
 
 </div>

@@ -10,7 +10,7 @@ const appRoutes : Routes = [
 
   { path:'', component : LoginComponent },
   { path:'Inicio', component : InicioComponent },
-  { path:'Cuestionario', component : CuestionarioComponent },
+  { path:'Cuestionario/:id_cuestionario', component : CuestionarioComponent },
   { path:'Resultado', component : ResultadosComponent }
 
 ]

@@ -38,3 +38,23 @@
     border-radius: 1rem;
     font-weight: 500;
 }
+
+.profile_text {
+
+    margin-top: 0.5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem;
+    background-color: #1E2440;
+    color: #ffffff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.profile_text h3, h5 {
+    margin: 0;
+}
