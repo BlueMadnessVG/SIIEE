@@ -1,0 +1,3 @@
+- Responsividad con dispositivos moviles
+- Agregar un tap con la tabla del proyecto
+- Corregir el status de la encuesta

@@ -30,13 +30,20 @@
     font-size: 20px;
 }
 
-.info_statistics{
+.info_grafic{
     background-color: #ffffff;
     border: 1px solid #6074CC;
     padding: 1rem;
-    margin: 10px 3%;
+    margin: 0 3% 10px 3%;
     border-radius: 1rem;
     font-weight: 500;
+}
+
+.info_table {
+    background-color: #ffffff;
+    border: 1px solid #6074CC;
+
+    font-size: 15px !important;
 }
 
 .profile_text {
@@ -48,13 +55,66 @@
     justify-content: space-between;
     align-items: center;
 
+}
+
+.profile_info {
+
     padding: 1rem;
     background-color: #1E2440;
     color: #ffffff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid #ffffff;
+}
+
+.profile_info p {
+
+    margin-bottom: 0;
+    margin-top: 10px;
+
+    color: #C8C8C9;
+    text-align: justify;
+
 }
 
 .profile_text h3, h5 {
     margin: 0;
+}
+
+.tap {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+    margin: 10px 3%;
+}
+
+.tap p {
+    background-color: #363A6B;
+    padding: 0 6.5vw 0 6.5vw;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.tap button {
+    border: 0;
+    color: #ffffff;
+}
+
+.tap p:hover {
+    background-color: #1E2440;
+}
+
+.active {
+    background-color: #6074CC !important;
+}
+
+.activePreview {
+    opacity: 0;
+    display: none;
 }

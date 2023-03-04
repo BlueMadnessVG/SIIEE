@@ -82,42 +82,51 @@ export class InicioComponent implements OnInit {
       JSON.parse(localStorage.getItem('info_alumno') || "{}")[0].nro_cuenta,
     ).subscribe ( (data) => {
       
-      console.log(data[0].secuencial_global.slice(0, -1));
+      console.log(data);
+      var element = document.getElementById('a1');
 
       if(data[0].activo_reflexivo[data[0].activo_reflexivo.length - 1] == "A") {
         this.activo = data[0].activo_reflexivo.slice(0, -1);
         this.reflexivo = 0;
+        document.getElementById('a' + this.activo)!.innerHTML = "x";
       }
       else {
         this.reflexivo = data[0].activo_reflexivo.slice(0, -1);
         this.activo = 0;
+        document.getElementById('r' + this.reflexivo)!.innerHTML = "x";
       }
 
       if(data[0].sensorial_intuitivo[data[0].sensorial_intuitivo.length - 1] == "A") {
         this.sensorial = data[0].sensorial_intuitivo.slice(0, -1);
         this.intuitivo = 0;
+        document.getElementById('s' + this.sensorial)!.innerHTML = "x";
       }
       else {
-        this.sensorial = data[0].sensorial_intuitivo.slice(0, -1);
-        this.intuitivo = 0;
+        this.intuitivo = data[0].sensorial_intuitivo.slice(0, -1);
+        this.secuencial = 0;
+        document.getElementById('a' + this.intuitivo)!.innerHTML = "x";
       }
 
       if(data[0].visual_verbal[data[0].visual_verbal.length - 1] == "A") {
         this.visual = data[0].visual_verbal.slice(0, -1);
         this.verbal = 0;
+        document.getElementById('v' + this.visual)!.innerHTML = "x";
       }
       else {
-        this.visual = data[0].visual_verbal.slice(0, -1);
-        this.verbal = 0;
+        this.verbal = data[0].visual_verbal.slice(0, -1);
+        this.visual = 0;
+        document.getElementById('ve' + this.verbal)!.innerHTML = "x";
       }
 
       if(data[0].secuencial_global[data[0].secuencial_global.length - 1] == "A") {
         this.secuencial = data[0].secuencial_global.slice(0, -1);
         this.global = 0;
+        document.getElementById('se' + this.secuencial)!.innerHTML = "x";
       }
       else {
         this.global = data[0].secuencial_global.slice(0, -1);
         this.secuencial = 0;
+        document.getElementById('g' + this.global)!.innerHTML = "x";
       }
 
       this.chart.data.datasets.forEach((dataset:any) => {
@@ -147,26 +156,44 @@ export class InicioComponent implements OnInit {
       }
     ).subscribe ( (data) => {
       console.log(data);
-      this.estadoEncustas = data;  
+      this.estadoEncustas = data; 
     },
     (error) => {
       
     } )
   }
 
-  checkStatus( id_cuestionario: string ) {
+  checkStatus( ) {
 
-    if ( this.estadoEncustas !== undefined ) {
-      return this.estadoEncustas.some( x => x.id_cuestionario === id_cuestionario);
-    }
-    else {
-      return null;
-    }
+    return this.estadoEncustas.some( x => x.nro_cuenta === JSON.parse(localStorage.getItem('info_alumno') || "{}")[0].nro_cuenta);
 
   }
 
   realizarEncuesta( id_cuestionario: number ) {
     this.route.navigate(['/Cuestionario/' + id_cuestionario]);
+  }
+
+  cambiasGrafica( event: any ) {
+    event.target.classList.add('active');
+    var element = document.getElementById('Tabla');
+    element?.classList.remove('active');
+
+    var grafic = document.getElementsByClassName('info_grafic')[0];
+    grafic?.classList.remove('activePreview');
+    var table = document.getElementsByClassName('info_table')[0];
+    table?.classList.add('activePreview');
+  }
+
+  cambiasTabla( event:any) {
+    console.log("entro");
+    event.target.classList.add("active");
+    var element = document.getElementById('Grafica');
+    element?.classList.remove('active');
+
+    var grafic = document.getElementsByClassName('info_grafic')[0];
+    grafic?.classList.add('activePreview');
+    var table = document.getElementsByClassName('info_table')[0];
+    table?.classList.remove('activePreview');
   }
 
 }

@@ -83,15 +83,6 @@ export const postResultadoCuestionario = (req :Request, res:Response) =>{
                 }
             }
         }
-        console.log(a);
-        console.log(activo);
-        console.log(reflexivo);
-        console.log(sensorial);
-        console.log(intuitivo);
-        console.log(visual);
-        console.log(verbal);
-        console.log(secuencial);
-        console.log(global);
 
         if(activo>reflexivo){
             aux_1 = activo-reflexivo + 'A';

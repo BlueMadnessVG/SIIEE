@@ -10,17 +10,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
 a, p {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 20px;
     color: #edf0f1;
     text-decoration: none;
 }
 
 p{
     margin-left: 1vw;
+    margin-bottom: 0;
     font-weight: bold;
 }
 
@@ -29,4 +31,21 @@ img {
     max-height: 6vh;
 
     border-radius: 50%;
+}
+
+.logout {
+
+    color: #ffffff;
+    background-color: #363A6B;
+    padding: 0.6vw 1.4vw 0.6vw 1.4vw;
+    border-radius: 50%;
+    border: none;
+    font-size: 27px;
+
+}
+
+.logout:hover {
+
+    background-color: #6074CC;
+
 }
