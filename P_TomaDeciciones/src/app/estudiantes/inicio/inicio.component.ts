@@ -39,7 +39,7 @@ export class InicioComponent implements OnInit {
     this.chart = new Chart("MyChart", {
       type: 'radar',
       data: {
-        labels: [ 'Activo', 'Sensorial', 'Visual', 'Secuencial', 'Reflexico', 'Intuitivo', 'Verbal', 'Gobal' ],
+        labels: [ 'Activo', 'Sensorial', 'Visual', 'Secuencial', 'Reflexivo', 'Intuitivo', 'Verbal', 'Global' ],
         datasets: [
           {
             label: 'Tu Perfil',
@@ -164,10 +164,10 @@ export class InicioComponent implements OnInit {
   }
 
   checkStatus( ) {
-
-    return this.estadoEncustas.some( x => x.nro_cuenta === JSON.parse(localStorage.getItem('info_alumno') || "{}")[0].nro_cuenta);
+    return this.estadoEncustas?.some( x => x.nro_cuenta === JSON.parse(localStorage.getItem('info_alumno') || "{}")[0].nro_cuenta);
 
   }
+
 
   realizarEncuesta( id_cuestionario: number ) {
     this.route.navigate(['/Cuestionario/' + id_cuestionario]);

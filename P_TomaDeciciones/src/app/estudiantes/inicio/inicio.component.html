@@ -9,7 +9,7 @@
             <p class="sub_title"> {{Lista.nombre}} </p>
             <div class="content">
                 <p class="text"> Profesor:  </p>
-                <p class="text"> Fransisco Figueroa </p>
+                <p class="text"> Francisco Figueroa </p>
             </div>
             <div class="content" >
                 <p class="text"> Estado:  </p>
@@ -18,13 +18,13 @@
             </div>
 
             <div class="button" (click)="realizarEncuesta( Lista.id_cuestionario )">
-                <button class="b_encuesta" *ngIf="checkStatus( )"> Realizar nueva mente </button>
-                <button class="b_encuesta" *ngIf="!checkStatus( )"> Comensar encuesta </button>
+                <button class="b_encuesta" *ngIf="checkStatus( )"> Realizar nuevamente </button>
+                <button class="b_encuesta" *ngIf="!checkStatus( )"> Comenzar encuesta </button>
             </div>
         </div>
 
         <div class="footer">
-            <p class="text">Numero de encuestas puede variar dependiendo del profesor/s asignados al alumno</p>
+            <p class="text">Numero de encuestas puede variar dependiendo del profesor o profesores asignados al alumno</p>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
 
         <div class="Description">
             <div class="title">
-                <p>Descripcion de la encuesta </p>
+                <p>Descripción de la encuesta </p>
             </div>
             <div class="des_info">
                 <p class="text"> {{ Description }} </p>
